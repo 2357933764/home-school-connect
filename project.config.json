@@ -11,6 +11,8 @@
     "compileType": "miniprogram",
     "appid": "touristappid",
     "projectname": "home-school-connect",
+    "simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
     "condition": {
         "search": {
             "current": -1,
