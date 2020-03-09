@@ -91,7 +91,8 @@
       align-items: center;
       height: 40px;
       box-sizing: border-box;
-      background: #F5F7F9;
+      background: #fff;
+      border: 3px solid #30D9C4;
       border-radius: 20px;
       padding: 12px 17px;
 

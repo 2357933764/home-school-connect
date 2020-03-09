@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/main"
+    "pages/index/main",
+    "pages/message/main",
+    "pages/my/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,6 +13,33 @@
   "usingComponents": {
     "van-button": "/vant-weapp/dist/button/index",
     "van-icon": "/vant-weapp/dist/icon/index",
-    "van-dialog": "/vant-weapp/dist/dialog/index"
+    "van-dialog": "/vant-weapp/dist/dialog/index",
+    "van-tabbar": "/vant-weapp/dist/tabbar/index",
+  "van-tabbar-item": "/vant-weapp/dist/tabbar-item/index"
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "black",
+    "selectedColor": "#30D9C4",
+    "color": "#ccc",
+    "list": [{
+      "pagePath": "pages/index/main",
+      "iconPath":"static/icon/home.png",
+      "selectedIconPath":"static/icon/homeSelected.png",
+      "text": "首页"
+    },
+    {
+      "pagePath": "pages/message/main",
+      "iconPath":"static/icon/message.png",
+      "selectedIconPath":"static/icon/messageSelected.png",
+      "text": "消息"
+    },
+    {
+      "pagePath": "pages/my/main",
+      "iconPath":"static/icon/my.png",
+      "selectedIconPath":"static/icon/mySelected.png",
+      "text": "我的"
+    }
+    ]
   }
 }

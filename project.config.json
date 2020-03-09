@@ -5,6 +5,7 @@
         "es6": false,
         "postcss": true,
         "minified": true,
+        "checkSiteMap": false,
         "newFeature": true
     },
     "miniprogramRoot": "dist/wx/",
