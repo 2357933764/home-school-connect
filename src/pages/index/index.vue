@@ -1,17 +1,14 @@
 <template>
   <div>
-    <Banner
+    <div :style="{marginTop: '23px'}">
+      <Banner
       title="你有一封最新通知"
       subTitle="点击查看"
       img="../../../static/img/bg.jpg"
       @onClick="onBannerClick"
     />
-    <Func
-      @onClassClick="onClassClick"
-      @onWorkClick="onWorkClick"
-      @onLeaveClick="onLeaveClick"
-      @onScoreClick="onScoreClick"
-    />
+    </div>
+    <Func/>
   </div>
 </template>
 
@@ -45,6 +42,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

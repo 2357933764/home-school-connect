@@ -92,7 +92,6 @@
       height: 40px;
       box-sizing: border-box;
       background: #fff;
-      border: 3px solid #30D9C4;
       border-radius: 20px;
       padding: 12px 17px;
 

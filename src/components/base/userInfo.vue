@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss">
     .user-info-wrapper{
-      margin-top:20px;
+      margin-top:5px;
         width:100%;
         display:flex;
         justify-content: center;
@@ -45,12 +45,11 @@ export default {
             box-sizing: border-box;
             padding: 10px 20px;
             border-radius: 10px;
-            border: 3px solid #30D9C4;
             display: flex;
             align-items:center;
             .user-avatar{
-                width: 100px;
-                height: 100px;
+                width: 60px;
+                height: 60px;
                 overflow: hidden;
             }
             .info-wrapper{

@@ -39,8 +39,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 150px;
-      border-radius: 10px;
+      height: 170px;
+      border-radius: 5px;
       background-size: 100% 100%;
       background-repeat: no-repeat;
 

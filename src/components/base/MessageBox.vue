@@ -8,8 +8,30 @@
       >
            <div class="message-info-wrapper">
           <div class="message-title">{{message.title}}</div>
-          <div class="message-author">{{message.role}}</div>
-          <div class="message-category">{{message.date}}</div>
+          <div class="message-data">{{message.data}}</div>
+          <div class="message-bottom">
+            <div class="message-tag-wrapper">
+              <van-tag 
+              round type="primary" 
+              v-if="message.type  === 'school'"
+              class="tag-style"
+              >校内通知</van-tag>
+              <van-tag 
+              round type="primary" 
+              v-if="message.type  === 'class'"
+              class="tag-style"
+              >班级通知</van-tag>
+              <van-tag round type="success"
+                v-if="message.read"
+                class="tag-style"
+              >已读</van-tag>
+              <van-tag round type="danger"
+                v-else
+                class="tag-style"
+              >未读</van-tag>
+            </div>
+          <div class="message-date">{{message.date}}</div>
+          </div>
             </div>
       </div>
     </div>
@@ -24,15 +46,21 @@
       return {
         data: [
           {date: '2020-12-12',
-            title: '放假通知',
-            role: '行政处'
+            title: '放假通知放假通知放假通知放假通知放假通知放假通知',
+            type: 'school',
+            read: true,
+            data: '行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处'
           },
           {date: '2020-12-12',
             title: '放假通知',
-            role: '行政处'
+            type: 'class',
+            read: false,
+            data: '行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处'
           },
           {date: '2020-12-12',
             title: '放假通知',
+            type: 'class',
+            read: true,
             role: '行政处'
           }
         ]
@@ -54,49 +82,61 @@
 
 <style lang="scss" scoped>
   .search-table-wrapper {
-    padding: 0 16px;
-
-    .search-table-inner {
-      .search-table-message {
-        margin: 14.5px 0;
-        box-sizing: border-box;
-        padding: 10px 0;
-        border-radius: 10px;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        border: 3px solid #30D9C4;
-
-        .message-info-wrapper {
-          width: 80%;
-          margin-left: 15.5px;
-          
-
+      padding: 0 20px;
+      box-sizing: border-box;
+      .search-table-inner {
+        .search-table-message {
+          width:100%;
+          border:1px solid #ccc;
+          box-shadow: 5px 5px 10px 2px #ddd;
+          border-radius:5px;
+          padding:10px 20px;
+          margin: 15px 0 ;
+          box-sizing: border-box;
+          .message-info-wrapper {
           .message-title {
-            width: 100%;
-            color: #333;
-            font-size: 16px;
-            line-height: 22.5px;
+            color: #222;
+            font-size: 20px;
+            line-height: 24px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             font-weight: 500;
+            margin:10px 0;
           }
 
-          .message-author {
+          .message-data {
+            padding:0 20px;
+            box-sizing: border-box;
             color: rgba(0, 0, 0, .65);
-            font-size: 13px;
+            font-size: 16px;
             line-height: 18px;
-            margin-top: 5px;
+            height: 52px;
+            overflow: hidden;
           }
 
-          .message-category {
+          .message-bottom{
+            margin-top:10px;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            .message-tag-wrapper{
+              display: flex;
+              align-items: center;
+            }
+            .message-date {
             color: rgba(0, 0, 0, .45);
             font-size: 13px;
             line-height: 18px;
+          }
           }
         }
       }
     }
   }
+</style>
+<style scoped>
+.tag-style{
+  margin-right:10px;
+}
 </style>

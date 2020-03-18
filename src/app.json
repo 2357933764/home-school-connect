@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/main",
     "pages/message/main",
+    "pages/index/main",
+    
     "pages/my/main"
   ],
   "window": {
@@ -14,13 +15,16 @@
     "van-button": "/vant-weapp/dist/button/index",
     "van-icon": "/vant-weapp/dist/icon/index",
     "van-dialog": "/vant-weapp/dist/dialog/index",
-    "van-tabbar": "/vant-weapp/dist/tabbar/index",
-  "van-tabbar-item": "/vant-weapp/dist/tabbar-item/index"
+    "van-tabbar-item": "/vant-weapp/dist/tabbar-item/index",
+    "van-tab": "/vant-weapp/dist/tab/index",
+    "van-tabs": "/vant-weapp/dist/tabs/index",
+    "van-tag": "/vant-weapp/dist/tag/index",
+    "van-switch": "vant-weapp/dist/switch/index"
   },
   "tabBar": {
     "backgroundColor": "#fafafa",
     "borderStyle": "black",
-    "selectedColor": "#30D9C4",
+    "selectedColor": "#4585ff",
     "color": "#ccc",
     "list": [{
       "pagePath": "pages/index/main",
