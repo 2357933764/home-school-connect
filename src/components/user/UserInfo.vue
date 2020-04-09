@@ -6,7 +6,7 @@
               round
               height="100%"
               mode="scaleToFill"
-              src="https://www.youbaobao.xyz/book/img/loading2.ae9e5924.jpeg"
+              src=""
               />
           </div>
           <div class="info-wrapper">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ImageView from './ImageView'
+import ImageView from '../base/ImageView'
 export default {
   components: {
     ImageView
@@ -27,7 +27,7 @@ export default {
     return {
       userInfo: {
         nickname: '花花',
-        id: '123456789'
+        id: '123456789@qq.com'
       }
     }
   }

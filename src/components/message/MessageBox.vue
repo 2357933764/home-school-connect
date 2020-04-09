@@ -3,8 +3,9 @@
     <div class="search-table-inner">
       <div
         class="search-table-message"
-        v-for="(message, index) in data"
+        v-for="(message, index) in mdata"
         :key="index"
+        @click="() => onMessageClick(message)"
       >
            <div class="message-info-wrapper">
           <div class="message-title">{{message.title}}</div>
@@ -13,16 +14,11 @@
             <div class="message-tag-wrapper">
               <van-tag 
               round type="primary" 
-              v-if="message.type  === 'school'"
+              v-if="message.orderfirst === true"
               class="tag-style"
-              >校内通知</van-tag>
-              <van-tag 
-              round type="primary" 
-              v-if="message.type  === 'class'"
-              class="tag-style"
-              >班级通知</van-tag>
+              >置顶</van-tag>
               <van-tag round type="success"
-                v-if="message.read"
+                v-if="message.read === true"
                 class="tag-style"
               >已读</van-tag>
               <van-tag round type="danger"
@@ -30,7 +26,9 @@
                 class="tag-style"
               >未读</van-tag>
             </div>
-          <div class="message-date">{{message.date}}</div>
+            <div class="message-other">
+              {{message.date}}
+            </div>
           </div>
             </div>
       </div>
@@ -41,41 +39,29 @@
 <script>
   export default {
     props: {
+      mdata: {
+        type: String,
+        default: ''
+      }
     },
     data () {
       return {
-        data: [
-          {date: '2020-12-12',
-            title: '放假通知放假通知放假通知放假通知放假通知放假通知',
-            type: 'school',
-            read: true,
-            data: '行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处'
-          },
-          {date: '2020-12-12',
-            title: '放假通知',
-            type: 'class',
-            read: false,
-            data: '行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处'
-          },
-          {date: '2020-12-12',
-            title: '放假通知',
-            type: 'class',
-            read: true,
-            role: '行政处'
-          }
-        ]
       }
     },
     methods: {
-      onClick (message) {
-        this.$router.push({
-          path: '/pages/detail/main',
-          query: {
-            fileName: message.fileName
-          }
-        })
-        this.$emit('onClick', message)
+      // 跳转详情页
+      onMessageClick (message) {
+        this.$emit('onMessageClick', message)
       }
+      // onClick (message) {
+      //   this.$router.push({
+      //     path: '/pages/detail/main',
+      //     query: {
+      //       fileName: message.fileName
+      //     }
+      //   })
+      //   this.$emit('onClick', message)
+      // }
     }
   }
 </script>
@@ -124,7 +110,7 @@
               display: flex;
               align-items: center;
             }
-            .message-date {
+            .message-other {
             color: rgba(0, 0, 0, .45);
             font-size: 13px;
             line-height: 18px;

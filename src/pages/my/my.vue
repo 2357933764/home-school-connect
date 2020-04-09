@@ -39,10 +39,20 @@
 </template>
 
 <script>
-import UserInfo from '../../components/base/UserInfo'
+import UserInfo from '../../components/user/UserInfo'
 export default {
   components: {
     UserInfo
+  },
+  mounted () {
+    this.init()
+  },
+  methods: {
+    init () {
+      wx.setNavigationBarTitle({
+        title: '个人中心'
+      })
+    }
   }
 }
 </script>

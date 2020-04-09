@@ -17,20 +17,49 @@
         <van-tab title="班级通知" ></van-tab>
       </van-tabs>
     </div>
-    <MessageBox/>
+    <MessageBox
+    :mdata = mdata
+    @onMessageClick="gotoMessageDetail"
+    />
   
   </div>
 </template>
 
 <script>
 import SearchBar from '../../components/base/SearchBar'
-import MessageBox from '../../components/base/MessageBox'
+import MessageBox from '../../components/message/MessageBox'
 export default {
   data () {
     return {
       type: '',
       read: false,
-      checked: false
+      checked: false,
+      mdata: [
+        { id: '1',
+          date: '2020-12-12',
+          title: '放假通知放假通知放假通知放假通知放假通知放假通知',
+          type: 'school',
+          read: true,
+          orderfirst: true,
+          data: '行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处'
+        },
+        { id: '2',
+          date: '2020-12-12',
+          title: '放假通知',
+          type: 'class',
+          read: false,
+          orderfirst: false,
+          data: '行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处行政处'
+        },
+        { id: '3',
+          date: '2020-12-12',
+          title: '放假通知',
+          type: 'class',
+          read: true,
+          orderfirst: false,
+          role: '行政处'
+        }
+      ]
     }
   },
   components: {
@@ -61,6 +90,10 @@ export default {
       } else {
         // 只看未读
       }
+    },
+    gotoMessageDetail (message) {
+      const {id, date, type, read, title, data, orderfirst} = message
+      this.$router.push({ path: '/pages/messageDetail/main', query: {id, date, type, read, title, data, orderfirst} })
     }
   }
 }

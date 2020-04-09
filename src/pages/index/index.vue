@@ -8,7 +8,9 @@
       @onClick="onBannerClick"
     />
     </div>
-    <Func/>
+    <Func
+      @onLeaveClick="onLeaveClick"
+    />
   </div>
 </template>
 
@@ -29,6 +31,10 @@ export default {
     },
     onLeaveClick () {
       // 跳转页面
+      this.$router.push({
+        path: '/pages/leave/main',
+        query: {}
+      })
     },
     onWorkClick () {
       // 跳转
