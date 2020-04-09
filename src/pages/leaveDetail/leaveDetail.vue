@@ -49,9 +49,6 @@ export default {
   },
   methods: {
     init () {
-      wx.setNavigationBarTitle({
-        title: '请假详情'
-      })
       const {teacherName, date, reason, state} = this.$route.query
       this.leave = {teacherName, date, reason, state}
       console.log('leave', this.leave.date)

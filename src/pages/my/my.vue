@@ -3,7 +3,10 @@
       <UserInfo/>
       <div class="setting-box">
         <div class="setting-wrapper">
-        <div class="setting-item-wrapper">
+        <div 
+          class="setting-item-wrapper"
+          @click="goToConfirm"
+        >
           <div class="item-left">
             <van-icon 
               name="manager-o"
@@ -49,9 +52,9 @@ export default {
   },
   methods: {
     init () {
-      wx.setNavigationBarTitle({
-        title: '个人中心'
-      })
+    },
+    goToConfirm () {
+      this.$router.push({path: '/pages/studentConfirm/main', query: {}})
     }
   }
 }

@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/askForLeave/main",
     "pages/index/main",
     "pages/message/main",
     "pages/my/main",
     "pages/messageDetail/main",
     "pages/leave/main",
-    "pages/leaveDetail/main"
+    "pages/leaveDetail/main",
+    "pages/askForLeave/main",
+    "pages/studentConfirm/main",
+    "pages/workList/main",
+    "pages/workDetail/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

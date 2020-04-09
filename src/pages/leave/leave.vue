@@ -62,9 +62,6 @@ export default {
   },
   methods: {
     init () {
-      wx.setNavigationBarTitle({
-        title: '请假列表'
-      })
     },
     gotoLeaveDetail (leave) {
       const {teacherName, date, reason, state} = leave

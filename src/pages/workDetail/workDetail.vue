@@ -1,25 +1,32 @@
 <template>
   <div class="detail-all-wrapper">
     <div class="detail-title">
-      {{message.title}}
+      作业详情
     </div>
     <div class="detail-other-wrapper">
-      <span 
-      class = "the-top"
-      v-show= "message.orderfirst === 'true'">
-      置顶
-      </span>
+          <span class="the-tag">
+              <van-tag 
+              round type="success" 
+              v-if="work.state  === 'pass'"
+              class="tag-style"
+              >已读</van-tag>
+              <van-tag 
+              round type="danger" 
+              v-if="work.state  === 'fail'"
+              class="tag-style"
+              >未读</van-tag>
+          </span>
       <span class="the-right">
-        <span class="type">
-        {{message.type}}
+        <span class="teacherName">
+        {{work.teacherName}}
       </span>
       <span class="date">
-        {{message.date}}
+        {{work.date}}
       </span>
       </span>
     </div>
     <div class="detail-data">
-      {{message.data}}
+      {{work.reason}}
     </div>
   </div>
 </template>
@@ -29,7 +36,7 @@ export default {
   data () {
     return {
       id: '',
-      message: {}
+      work: {}
     }
   },
   mounted () {
@@ -37,9 +44,9 @@ export default {
   },
   methods: {
     init () {
-      const {id, date, type, read, title, data, orderfirst} = this.$route.query
-      this.message = {id, date, type, read, title, data, orderfirst}
-      console.log('message', this.message.title)
+      const {teacherName, date, reason, state} = this.$route.query
+      this.work = {teacherName, date, reason, state}
+      console.log('work', this.work.date)
       // const openId = getStorageSync('openId')
       // const vue = this
       // getDetailData(openId, fileName).then(response => {
@@ -94,12 +101,7 @@ export default {
       height:20px;
       line-height:20px;
       position: relative;
-      .the-top{
-        background-color: #4585ff;
-        border-radius: 10px;
-        color:#fff;
-        font-size:14px;
-        padding:2px 12px;
+      .the-tag{
         position: absolute;
         left:0;
       }

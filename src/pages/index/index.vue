@@ -10,6 +10,7 @@
     </div>
     <Func
       @onLeaveClick="onLeaveClick"
+      @onWorkClick="onWorkClick"
     />
   </div>
 </template>
@@ -38,6 +39,10 @@ export default {
     },
     onWorkClick () {
       // 跳转
+      this.$router.push({
+        path: '/pages/workList/main',
+        query: {}
+      })
     },
     onScoreClick () {
       // 跳转
